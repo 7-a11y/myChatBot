@@ -31,7 +31,7 @@ function getDateAndTime(): string {
 export const DATE_AND_TIME = getDateAndTime();
 
 export const AI_NAME = "BITSoBuddy";
-export const OWNER_NAME = "ditya";
+export const OWNER_NAME = "Aditya";
 
 export const WELCOME_MESSAGE = `Hi there! 👋 How can I help you today? Are you looking for help with your coursework, case studies, specialization advice, or something else related to your MBA journey at BITSoM?`;
 
