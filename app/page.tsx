@@ -20,7 +20,7 @@ import { ChatHeaderBlock } from "@/app/parts/chat-header";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { UIMessage } from "ai";
 import { useEffect, useState, useRef } from "react";
-import { AI_NAME, CLEAR_CHAT_TEXT, OWNER_NAME, WELCOME_MESSAGE } from "@/config";
+import { AI_NAME, CLEAR_CHAT_TEXT, OWNER_NAME, WELCOME_MESSAGE } from "../config";
 import Image from "next/image";
 import Link from "next/link";
 

@@ -1,4 +1,4 @@
-# MyAI3 Repository Guide
+# BITSoBuddy Repository Guide
 
 ## Adding/Removing Tools
 
