@@ -112,8 +112,19 @@ export default function Chat() {
       setMessages([welcomeMessage]);
       saveMessagesToStorage([welcomeMessage], {});
       welcomeMessageShownRef.current = true;
+    } else if (isClient && messages.length === 1 && messages[0].role === "assistant") {
+      // Auto-update welcome message if it's the only message and doesn't match current config
+      const currentText = messages[0].parts.find(p => p.type === "text")?.text;
+      if (currentText !== WELCOME_MESSAGE) {
+        const updatedWelcomeMessage: UIMessage = {
+          ...messages[0],
+          parts: [{ type: "text", text: WELCOME_MESSAGE }]
+        };
+        setMessages([updatedWelcomeMessage]);
+        saveMessagesToStorage([updatedWelcomeMessage], durations);
+      }
     }
-  }, [isClient, initialMessages.length, setMessages]);
+  }, [isClient, initialMessages.length, setMessages, messages, durations]);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
